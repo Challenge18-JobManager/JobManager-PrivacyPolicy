@@ -1,0 +1,491 @@
+/*
+  Identidade visual provisória do app, tirada do Figma
+  (Challenge-18, "02. Design System & Foundations", frame "Teste de cores escolhida").
+  Troque os valores de marca aqui quando a identidade for fechada.
+*/
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("fonts/Urbanist.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("fonts/Urbanist-Italic.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Marca */
+  --navy: #041690;
+  --blue: #006ccb;
+  --sky: #badbff;
+  --yellow: #f7c547;
+  --pink: #d56aa0;
+  --royal: #1a56db;
+  --deep: #002c8e;
+
+  /* Papéis (claro) */
+  --bg: #ffffff;
+  --surface: #f3f7ff;
+  --border: #dbe5fb;
+  --text: #0e1440;
+  --text-secondary: #4a5275;
+  --heading: var(--deep);
+  --link: var(--royal);
+  --focus: var(--royal);
+
+  --radius-card: 30px;
+  --radius-medium: 14px;
+  --radius-small: 10px;
+
+  --font: "Urbanist", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #060a2b;
+    --surface: #0d1450;
+    --border: #1f2a75;
+    --text: #eef2ff;
+    --text-secondary: #b7c0e6;
+    --heading: var(--sky);
+    --link: #8fc2ff;
+    --focus: var(--yellow);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --text-secondary: var(--text);
+    --border: var(--text-secondary);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  padding: 8px 16px;
+  background: var(--yellow);
+  color: var(--navy);
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Topo */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-small);
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.languages {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin: 0;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.languages a {
+  display: block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.languages a[aria-current="page"] {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+/* Bento do topo */
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.tile {
+  border-radius: var(--radius-card);
+  padding: 28px;
+  min-height: 180px;
+}
+
+.tile h2,
+.tile p {
+  margin: 0;
+}
+
+.tile-title {
+  grid-column: span 3;
+  background: var(--sky);
+  color: var(--royal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.tile-title h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.tile-title h1 strong {
+  font-weight: 700;
+}
+
+.tile-title h1 em {
+  display: block;
+}
+
+.tile-title .eyebrow {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.updated {
+  align-self: flex-start;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--deep);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.tile-icon {
+  background: var(--blue);
+  display: grid;
+  place-items: center;
+}
+
+.tile-icon svg {
+  width: 96px;
+  height: 96px;
+  fill: var(--sky);
+}
+
+.tile-fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.tile-fact h2 {
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.tile-fact p {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.tile-navy {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.tile-navy h2 {
+  color: var(--yellow);
+}
+
+.tile-yellow {
+  background: var(--yellow);
+  color: var(--deep);
+}
+
+.tile-pink {
+  background: var(--pink);
+  color: var(--navy);
+}
+
+.tile-sky {
+  background: var(--sky);
+  color: var(--deep);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tile-title {
+    grid-column: span 2;
+  }
+
+  .tile-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tile-title {
+    grid-column: span 1;
+  }
+
+  .tile {
+    padding: 24px;
+    min-height: 0;
+  }
+}
+
+/* Texto da política */
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 24px;
+  padding: 20px;
+  border-radius: var(--radius-medium);
+  background: var(--surface);
+}
+
+.toc h2 {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.toc li + li {
+  margin-top: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .toc {
+    position: static;
+  }
+}
+
+.policy {
+  max-width: 68ch;
+}
+
+.policy section {
+  scroll-margin-top: 24px;
+}
+
+.policy section + section {
+  margin-top: 40px;
+}
+
+.policy h2 {
+  margin: 0 0 12px;
+  color: var(--heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.policy h3 {
+  margin: 24px 0 8px;
+  color: var(--heading);
+  font-size: 1.1875rem;
+  font-weight: 700;
+}
+
+.policy p,
+.policy ul {
+  margin: 0 0 12px;
+}
+
+.policy ul {
+  padding-left: 22px;
+}
+
+.policy li + li {
+  margin-top: 6px;
+}
+
+.policy strong {
+  font-weight: 700;
+}
+
+.note {
+  padding: 16px 20px;
+  border-radius: var(--radius-medium);
+  background: var(--surface);
+  border-left: 6px solid var(--yellow);
+}
+
+.path {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Rodapé */
+
+.footer {
+  margin-top: 56px;
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--navy);
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: var(--yellow);
+}
+
+.footer .tagline {
+  font-size: 1.25rem;
+}
+
+@media print {
+  .topbar .languages,
+  .toc,
+  .hero .tile-icon,
+  .skip-link {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .tile,
+  .footer {
+    background: none !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc;
+  }
+}
