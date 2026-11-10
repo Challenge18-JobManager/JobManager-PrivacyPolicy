@@ -42,7 +42,8 @@ HTML e CSS puros, sem build. A fonte fica no repositório para a página não fa
 
 - **O texto do app e o desta página são o mesmo.** Mudou a política, mudam juntos: as três páginas aqui, o texto embutido na `SettingsFeature` e a data de atualização no topo de cada página.
 - **O texto dos termos aqui é o mesmo que o app mostra ou linka.** Mudou o termo, mudam juntos: as três páginas `terms/`, o texto no app e a data "Atualizados em" no topo de cada página.
-- **Os campos `[A DEFINIR PELO RESPONSÁVEL]` dos termos (seção 14) não são inventados.** Razão social, CNPJ, endereço, lei aplicável e foro precisam ser preenchidos pelo responsável, nos três idiomas, antes do envio à App Store.
+- **Os termos não trazem identificação do responsável, lei aplicável nem foro.** Nada disso é inventado. Se o responsável decidir publicar esses dados, inclua uma seção nos três idiomas; o pendente está registrado em um comentário `TODO(KAN-194)` no topo de cada `terms/index.html`.
+- **Links internos apontam para o arquivo.** Troca de idioma e link entre política e termos usam `index.html` explícito (por exemplo, `../index.html`, `terms/index.html`), para funcionar ao abrir o arquivo direto, sem servidor. Na produção, o GitHub Pages serve tanto `/terms/` quanto `/terms/index.html`, então as URLs publicadas acima continuam valendo. Não troque por links de diretório.
 - **Preços não aparecem nos termos.** Eles variam por país e a loja os mostra antes da compra.
 - **Cada documento linka o outro.** O rodapé da política aponta para os termos, e o dos termos para a política.
 - **Os três idiomas andam juntos.** Nenhuma mudança entra em um idioma só.
@@ -55,7 +56,7 @@ HTML e CSS puros, sem build. A fonte fica no repositório para a página não fa
 python3 -m http.server 8765
 ```
 
-E abra http://localhost:8765.
+E abra http://localhost:8765. Também dá para abrir os `index.html` direto no navegador ou no VS Code (`file://`).
 
 ## Publicação
 
