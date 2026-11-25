@@ -84,12 +84,14 @@ html {
 /*
   Telas grandes: tudo aqui em baixo é rem, então escalar o tamanho base escala a página inteira
   (texto, coluna, grade de cards e sumário) na mesma proporção. Até 1600 px de largura nada muda
-  (16 px); depois cresce com a largura da janela e para em 225 % (36 px, a partir de 3600 px).
+  (16 px); depois cresce com a largura da janela e para em 225 % (36 px, a partir de 5600 px).
+  A parte fixa em % (50 %) faz o zoom do navegador (⌘+) continuar valendo em telas grandes: só com
+  1vw o zoom encolhia a largura em px de CSS na mesma proporção e o texto não mudava.
   A coluna de texto é limitada em ch, então a linha de leitura não estica.
 */
 @media (min-width: 1600px) {
   html {
-    font-size: clamp(100%, 1vw, 225%);
+    font-size: clamp(100%, 50% + 0.5vw, 225%);
   }
 }
 
