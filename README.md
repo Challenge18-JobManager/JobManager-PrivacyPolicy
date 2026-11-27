@@ -25,7 +25,7 @@ HTML e CSS puros, sem build. A fonte fica no repositório para a página não fa
 
 ## Regras
 
-- **O texto do app e o desta página são o mesmo.** Mudou a política, mudam juntos: as três páginas aqui, o texto embutido na `SettingsFeature` e a data de atualização no topo de cada página.
+- **O texto da política só existe aqui.** O app abre esta página pelo menu **Ajuda › Política de Privacidade**; não há texto embutido na `SettingsFeature`. Mudou a política, mudam juntos: as três páginas e a data de atualização no topo de cada uma.
 - **Os três idiomas andam juntos.** Nenhuma mudança entra em um idioma só.
 - **Identidade visual provisória.** Cores e fonte vêm do Figma (Challenge-18, página "02. Design System & Foundations", frame "Teste de cores escolhida"). Quando a identidade fechar, troque os valores de marca no `:root` de `assets/style.css`.
 - **Nome do app provisório.** Para trocar, substitua "Apply" nos três `index.html` (título, marca, texto e rodapé).
