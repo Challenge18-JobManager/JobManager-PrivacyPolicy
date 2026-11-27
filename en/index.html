@@ -83,7 +83,7 @@
 
         <section id="data">
           <h2>2. Data you keep in the app</h2>
-          <p>The app only stores what you type or add yourself:</p>
+          <p>The app stores what you type or add and what it generates in order to work, such as the notification history, dates, identifiers and a copy of the title and date of the events it writes to Calendar. This data includes:</p>
           <ul>
             <li><strong>Jobs:</strong> company, title, logo, link, platform, salary, work model, description, priority, stages, dates, result, feedback and the interview questions and answers you keep in each job.</li>
             <li><strong>Recruiter contacts:</strong> the contact's name and link, tied to a job.</li>
@@ -91,7 +91,7 @@
             <li><strong>Profile:</strong> your "about me" text and your interview notes.</li>
             <li><strong>Notifications and preferences:</strong> stage reminders, the notification history and the app settings, such as the reminder time and where to store your data.</li>
           </ul>
-          <p>When you open the menu bar panel, the app may read the text on the clipboard, if macOS allows it to be read without asking for confirmation. If the text looks like a job post, the app suggests it in the fill-in field. This happens on your Mac.</p>
+          <p>The app only reads the clipboard in the <span class="path">New Position</span> tab of the menu bar panel: when you click Paste, or when you open the panel on that tab or switch to it. In the last two cases, it only reads if macOS allows it without asking for confirmation and, if the text looks like a job post, suggests it in the fill-in field. This happens on your Mac.</p>
           <p>The app does not ask for your name, email, phone number or any other identifying data to work.</p>
         </section>
 
@@ -120,7 +120,7 @@
         <section id="permissions">
           <h2>6. Calendar and notifications</h2>
           <h3>Calendar</h3>
-          <p>If you turn on Calendar sync, the app asks for access to your calendars to create and update events for your job stages. The app only changes events it created itself. With sync on, it also reads those events to bring into the app the changes you make in Calendar.</p>
+          <p>If you turn on Calendar sync, the app asks for access to your calendars to create and update events for your job stages. The app only changes or deletes events it created itself: it never deletes an event you created, even if it is in the Apply calendar. With sync on, it also reads the events it created to bring into the app the changes you make in Calendar, including deletions: if you delete the event of a stage, that stage is also deleted in the app.</p>
           <p>Events live in the calendar you use on your Mac. If that calendar belongs to an account such as iCloud, Google or Outlook, it syncs under that account's rules.</p>
           <p>You can revoke access at any time in <span class="path">System Settings › Privacy &amp; Security › Calendars</span>.</p>
           <h3>Notifications</h3>
